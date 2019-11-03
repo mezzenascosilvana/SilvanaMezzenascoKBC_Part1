@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Expendia Suite]">
+  <parameter name="flightFrom" value="London, England, UK (LON-All Airports)"/>
+  <parameter name="Price" value="123.45"/>
+  <parameter name="browser" value="chrome"/>
+  <parameter name="flightTo" value="Dublin Airport (DUB), Ireland"/>
+  <parameter name="CheapPrice" value="22.33"/>
+  <listeners>
+    <listener class-name="test.Listeners"/>
+  </listeners>
+  <test name="Automation Positive Tests(failed)">
+    <classes>
+      <class name="test.ExpendiaTest">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="findFlight"/>
+          <include name="comparePriceResult" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- test.ExpendiaTest -->
+    </classes>
+  </test> <!-- Automation Positive Tests(failed) -->
+</suite> <!-- Failed suite [Expendia Suite] -->

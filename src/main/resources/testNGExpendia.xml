@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Expendia Suite">
+
+<parameter name="browser" value= "chrome"/>
+<parameter name="CheapPrice" value= "22.33"/>
+<parameter name="Price" value= "123.45"/>
+<parameter name="flightFrom" value= "London, England, UK (LON-All Airports)"/>
+<parameter name="flightTo" value= "Dublin Airport (DUB), Ireland"/>
+ <listeners> 
+        <listener class-name="test.Listeners"/>
+ </listeners>
+   
+  <test  name="Automation Positive Tests">
+    <classes>
+      <class name="test.ExpendiaTest"/>     
+    </classes>
+  </test> <!-- Automation Positive Tests -->
+  
+  
+</suite> <!-- Expendia Suite -->
