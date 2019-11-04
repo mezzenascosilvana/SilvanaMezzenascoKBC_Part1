@@ -20,15 +20,15 @@ public class ResultFlights {
 
 	/* verifyAirlinesPanel Elements */
 	By containerAirlines = By.id("airlines");
-	By byNameLocator_label = By.tagName("label");
+	By byNameLocatorLabel = By.tagName("label");
 	By byClassLocator = By.className("inline-label");
-	By byClassLocator_count = By.className("count");
-	By byNameLocator_li = By.tagName("li");
-	By byNameLocator_span = By.tagName("span");
-	By byNameLocator_h3 = By.tagName("h3");
+	By byClassLocatorCount = By.className("count");
+	By byNameLocatorLi = By.tagName("li");
+	By byNameLocatorSpan = By.tagName("span");
+	By byNameLocatorH3 = By.tagName("h3");
 	By containerResult = By.xpath("//*[@id='flightModuleList']");
-	By byClassLocator_legal = By.className("legal");
-	By byNameLocator_div = By.tagName("div");
+	By byClassLocatorLegal = By.className("legal");
+	By byNameLocatorDiv = By.tagName("div");
 
 	// Handle time
 	SmartWaits w = new SmartWaits(driver);
@@ -43,7 +43,7 @@ public class ResultFlights {
 
 		// Handle Airline Panel
 		List<WebElement> containerAirlinesPanel = driver.findElement(containerAirlines)
-				.findElements(byNameLocator_label);
+				.findElements(byNameLocatorLabel);
 		String elementBySpan = null;
 		String elementAirlineName = null;
 		boolean result = false;
@@ -51,18 +51,18 @@ public class ResultFlights {
 		for (WebElement cell : containerAirlinesPanel) {
 			cell.click(); // click on the firsht airline
 			elementAirlineName = cell.findElement(byClassLocator).getText();
-			//w.waitForElementToBeClickable(byClassLocator_count);
-			elementBySpan = cell.findElement(byClassLocator_count).getText();
+			// w.waitForElementToBeClickable(byClassLocator_count);
+			elementBySpan = cell.findElement(byClassLocatorCount).getText();
 			temp = Integer.parseInt(elementBySpan);
-		    System.out.println("The number of the flights into the panel for " + "(" + elementAirlineName + ")" + " is: "
-				+ temp );
-		if (cell.isDisplayed()) {
-			result = true;
-		} else {
-			result = false;
+			System.out.println(
+					"The number of the flights into the panel for " + "(" + elementAirlineName + ")" + " is: " + temp);
+			if (cell.isDisplayed()) {
+				result = true;
+			} else {
+				result = false;
+				break;
+			}
 			break;
-		}
-		break;
 		}
 		return result;
 	}
@@ -80,10 +80,10 @@ public class ResultFlights {
 		boolean result = false;
 		String temp = null;
 		WebElement childrenContainer = driver.findElement(containerResult);
-		List<WebElement> childrenElements = childrenContainer.findElements(byNameLocator_li);
+		List<WebElement> childrenElements = childrenContainer.findElements(byNameLocatorLi);
 		for (WebElement cell : childrenElements) {
-			childrenElementsbySpan = cell.findElements(byNameLocator_span);
-			childrenElementsbyH3 = cell.findElement(byNameLocator_h3);
+			childrenElementsbySpan = cell.findElements(byNameLocatorSpan);
+			childrenElementsbyH3 = cell.findElement(byNameLocatorH3);
 			temp = handleString(childrenElementsbyH3.getText());
 			for (int i = 0; i <= childrenElementsbySpan.size();) {
 				if (temp.contains(String.valueOf(price))) {
@@ -107,7 +107,6 @@ public class ResultFlights {
 	 * @return
 	 */
 	public String handleString(String value) {
-
 		String result = null;
 		char buf[] = new char[32];
 		value.getChars(32, 35, buf, 0);
@@ -116,8 +115,8 @@ public class ResultFlights {
 	}
 
 	/***
-	 * Displays first 3 results in console
-	 * Displays price flight, departure date, return date and airline name
+	 * Displays first 3 results in console Displays price flight, departure date,
+	 * return date and airline name
 	 */
 	public void showResult() {
 		List<WebElement> childrenElements = null;
@@ -144,7 +143,6 @@ public class ResultFlights {
 					System.out.println("------------------------------------------");
 					break;
 				}
-
 			}
 			j++;
 			if (j >= 3)
@@ -158,19 +156,18 @@ public class ResultFlights {
 	 * 
 	 */
 	public Boolean verifyTextBottonPage() {
-
 		boolean result = false;
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 
 		// Find element by link text and store in variable "Element"
-		WebElement element = driver.findElement(byClassLocator_legal);
+		WebElement element = driver.findElement(byClassLocatorLegal);
 
 		// This will scroll the web page till end.
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		// This will scroll the page till the element is found
-		
+
 		if (element.isDisplayed())
-		result = true;
+			result = true;
 		System.out.println(element.getText());
 		return result;
 	}

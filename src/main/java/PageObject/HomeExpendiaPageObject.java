@@ -12,8 +12,7 @@ import PageObject.helpers.SmartWaits;
 
 import java.util.concurrent.TimeUnit;
 
-
-public class HomeExpendiaPageObject  {
+public class HomeExpendiaPageObject {
 
 	WebDriver driver;
 
@@ -26,35 +25,34 @@ public class HomeExpendiaPageObject  {
 
 	/* imputflightFrom Elements */
 	By focusFrom = By.xpath("//div[@class='input-btn-group']");
-	By from_city = By.xpath("//*[@id='flight-origin-hp-flight']");
+	By fromCity = By.xpath("//*[@id='flight-origin-hp-flight']");
 
 	/* imputflightTo Elements */
-	By to_city = By.xpath("//*[@id='flight-destination-hp-flight']");
+	By toCity = By.xpath("//*[@id='flight-destination-hp-flight']");
 	By focus = By.xpath("//*[@id='gcw-flights-form-hp-flight']/div[3]/div[2]/div/div[1]");
-	
-	/*selectElementDropDownList Elements*/
-	By containerResult = By.id("flightModuleList");
-	By byNameLocator_ul = By.tagName("ul");
-	By byNameLocator_li = By.tagName("li");   
 
-	/*selectDateDeparting Elements*/
+	/* selectElementDropDownList Elements */
+	By containerResult = By.id("flightModuleList");
+	By byNameLocatorUl = By.tagName("ul");
+	By byNameLocatorLi = By.tagName("li");
+
+	/* selectDateDeparting Elements */
 	By departingDate = By.id("flight-departing-hp-flight");
-	By byNameLocator_td = By.tagName("td");
-	
-	/*selectDateReturning Elements*/
+	By byNameLocatorTd = By.tagName("td");
+
+	/* selectDateReturning Elements */
 	By returningDate = By.id("flight-returning-hp-flight");
 	By datepickerTable = By.className("datepicker-cal");
-	
-   /*selectTravelers Elements*/
+
+	/* selectTravelers Elements */
 	By menuTravelers = By.xpath("//*[@id='traveler-selector-hp-flight']/div/ul/li/button");
 	By num = By.xpath("//*[@id='traveler-selector-hp-flight']/div/ul/li/div/div/div/div[1]/div[4]/button");
 
-   /*searchButton*/
+	/* searchButton */
 	By searchButton = By.xpath("//*[@id='gcw-flights-form-hp-flight']/div[7]/label/button");
-	
-	SmartWaits w= new SmartWaits(driver);
-	
-	
+
+	SmartWaits w = new SmartWaits(driver);
+
 	/***
 	 * Select 'Flights' from menu home page
 	 */
@@ -69,7 +67,7 @@ public class HomeExpendiaPageObject  {
 	public void imputflightFrom(String cityFrom) throws InterruptedException {
 
 		driver.findElement(focusFrom).click();
-		driver.findElement(from_city).sendKeys(cityFrom);
+		driver.findElement(fromCity).sendKeys(cityFrom);
 		// selectElementDropDownList(); // Couldn't fully test as I was working on a
 		// virtual machine and I lost the focus
 	}
@@ -83,17 +81,17 @@ public class HomeExpendiaPageObject  {
 	public void imputflightTo(String cityTo) throws InterruptedException {
 
 		driver.findElement(focus).click();
-		driver.findElement(to_city).sendKeys(cityTo);
+		driver.findElement(toCity).sendKeys(cityTo);
 		// selectElementDropDownList();
 	}
 
 	/***
-	 *  Select one element from the dropdown list that matches with one value
+	 * Select one element from the dropdown list that matches with one value
 	 */
 	public void selectElementDropDownList() {
-		
-		WebElement childrenContainer = driver.findElement(containerResult).findElement(byNameLocator_ul);
-		List<WebElement> childrenElements = childrenContainer.findElements(byNameLocator_li);
+
+		WebElement childrenContainer = driver.findElement(containerResult).findElement(byNameLocatorUl);
+		List<WebElement> childrenElements = childrenContainer.findElements(byNameLocatorLi);
 		for (WebElement child : childrenElements) {
 			if (child.getAttribute("class").equals("results-item")) {
 				child.click();
@@ -102,7 +100,7 @@ public class HomeExpendiaPageObject  {
 	}
 
 	/***
-	 *  Select date of departure. Handles datepicker object
+	 * Select date of departure. Handles datepicker object
 	 */
 	public void selectDateDeparting() {
 
@@ -113,7 +111,7 @@ public class HomeExpendiaPageObject  {
 		// These are the rows of the 'From date' picker table
 		// List<WebElement> rows = dateWidgetFrom.findElements(By.tagName("tr"));
 		// This are the columns of the from date picker table
-		List<WebElement> columns = dateWidgetFrom.findElements(byNameLocator_td);
+		List<WebElement> columns = dateWidgetFrom.findElements(byNameLocatorTd);
 
 		// DatePicker is a table. Thus we can navigate to each cell
 		// and if a cell matches with the current date then we will click it.
@@ -124,19 +122,17 @@ public class HomeExpendiaPageObject  {
 				break;
 			}
 		}
-		driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS); 
-		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 	}
 
 	/***
-	* Get The Current Day
-	*Flight selection restricted for all flights before 5pm. If select flight
-	*after 5pm, next day is selected
-	* This is because of an expedia.com error
-	*/
+	 * Get The Current Day Flight selection restricted for all flights before 5pm.
+	 * If select flight after 5pm, next day is selected This is because of an
+	 * expedia.com error
+	 */
 	private String getCurrentDay() {
-		
+
 		// Create a Calendar Object
 		Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
 		String todayStr = null;
@@ -158,7 +154,7 @@ public class HomeExpendiaPageObject  {
 	 */
 	public void selectDateReturning() {
 		// Handle time
-		SmartWaits w= new SmartWaits(driver);
+		SmartWaits w = new SmartWaits(driver);
 		driver.findElement(returningDate).click();
 		// This is from date picker table
 		WebElement dateWidgetFrom = driver.findElement(datepickerTable);
@@ -167,7 +163,7 @@ public class HomeExpendiaPageObject  {
 		// List<WebElement> rows = dateWidgetFrom.findElements(By.tagName("tr"));
 
 		// This are the columns of the from date picker table
-		List<WebElement> columns = dateWidgetFrom.findElements(byNameLocator_td);
+		List<WebElement> columns = dateWidgetFrom.findElements(byNameLocatorTd);
 
 		// DatePicker is a table. Thus we can navigate to each cell
 		// and if a cell matches with the current date then we will click it.
@@ -178,16 +174,16 @@ public class HomeExpendiaPageObject  {
 				break;
 			}
 		}
-       
+
 	}
 
 	/***
-	 *  Get The Return Day
-	 *  Calculate number of days between departure date and return date
-	 *  Pass this value as a parameter
+	 * Get The Return Day Calculate number of days between departure date and return
+	 * date Pass this value as a parameter
+	 * 
 	 * @param day
 	 * @return
-	 */	
+	 */
 	public String getReturnDay(int day) {
 		// Create a Calendar Object
 		Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
@@ -204,8 +200,8 @@ public class HomeExpendiaPageObject  {
 	 * Select Travelers
 	 */
 	public void selectTravelers() {
-		
-		//w.waitForElementToBeClickable(menuTravelers);
+
+		// w.waitForElementToBeClickable(menuTravelers);
 		driver.findElement(menuTravelers).click();
 		driver.findElement(num).click();
 		driver.findElement(menuTravelers).click();
@@ -215,7 +211,7 @@ public class HomeExpendiaPageObject  {
 	 * Press Search button
 	 */
 	public void searchButton() {
-		
+
 		driver.findElement(searchButton).click();
 
 	}
