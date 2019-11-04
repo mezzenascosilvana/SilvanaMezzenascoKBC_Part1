@@ -35,8 +35,7 @@ public class BasePage {
         driver.manage().window().maximize();
 	}
 	
-	public void finish() {
-		
+	public void finish() {	
 		driver.close();
 		driver.quit();
 	}

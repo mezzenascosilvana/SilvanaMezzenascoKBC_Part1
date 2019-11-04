@@ -13,13 +13,10 @@
     <classes>
       <class name="test.ExpendiaTest">
         <methods>
-          <include name="compareCheapPriceResult"/>
-          <include name="verifyPanelAirlines"/>
+          <include name="compareCheapPriceResult" invocation-numbers="0"/>
           <include name="cleanUp"/>
-          <include name="findFlight" invocation-numbers="0"/>
-          <include name="comparePriceResult"/>
-          <include name="verifyText"/>
-          <include name="showFlightsResults"/>
+          <include name="findFlight"/>
+          <include name="comparePriceResult" invocation-numbers="0"/>
         </methods>
       </class> <!-- test.ExpendiaTest -->
     </classes>

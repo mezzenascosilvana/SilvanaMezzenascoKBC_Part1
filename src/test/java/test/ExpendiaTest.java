@@ -111,10 +111,8 @@ public class ExpendiaTest extends BasePage {
 
 		try {
 			System.out.println("//******End of the suite**********************//");
-
 		} finally {
-			
-			//finish();			
+			finish();			
 		}
 	}
 

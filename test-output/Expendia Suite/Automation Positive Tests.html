@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Automation Positive Tests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/5</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Nov 04 20:08:46 GMT 2019</td>
+<td>Started on:</td><td>Mon Nov 04 20:34:08 GMT 2019</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (75 ms)</td>
+<tr><td>Total time:</td><td>49 seconds (49786 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,22 +75,59 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.ExpendiaTest.findFlight()'><b>findFlight</b><br>Test class: test.ExpendiaTest<br>Parameters: London, England, UK (LON-All Airports), Dublin Airport (DUB), Ireland</td>
-<td><div><pre>java.io.FileNotFoundException: Add your path (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at PageObject.BasePage.setup(BasePage.java:19)
-	at test.ExpendiaTest.findFlight(ExpendiaTest.java:29)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1698097425", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1698097425'><pre>java.io.FileNotFoundException: Add your path (The system cannot find the file specified)
-	at java.io.FileInputStream.open0(Native Method)
-	at java.io.FileInputStream.open(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at java.io.FileInputStream.&lt;init&gt;(Unknown Source)
-	at PageObject.BasePage.setup(BasePage.java:19)
-	at test.ExpendiaTest.findFlight(ExpendiaTest.java:29)
+<td title='test.ExpendiaTest.compareCheapPriceResult()'><b>compareCheapPriceResult</b><br>Test class: test.ExpendiaTest<br>Parameters: 22.33</td>
+<td><div><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: 35
+	at java.lang.String.getChars(Unknown Source)
+	at PageObject.ResultFlights.handleString(ResultFlights.java:112)
+	at PageObject.ResultFlights.comparePrice(ResultFlights.java:87)
+	at test.ExpendiaTest.compareCheapPriceResult(ExpendiaTest.java:81)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace765242091", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace765242091'><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: 35
+	at java.lang.String.getChars(Unknown Source)
+	at PageObject.ResultFlights.handleString(ResultFlights.java:112)
+	at PageObject.ResultFlights.comparePrice(ResultFlights.java:87)
+	at test.ExpendiaTest.compareCheapPriceResult(ExpendiaTest.java:81)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>2</td>
+<td>test.ExpendiaTest@2a5ca609</td></tr>
+<tr>
+<td title='test.ExpendiaTest.comparePriceResult()'><b>comparePriceResult</b><br>Test class: test.ExpendiaTest<br>Parameters: 123.45</td>
+<td><div><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: 35
+	at java.lang.String.getChars(Unknown Source)
+	at PageObject.ResultFlights.handleString(ResultFlights.java:112)
+	at PageObject.ResultFlights.comparePrice(ResultFlights.java:87)
+	at test.ExpendiaTest.comparePriceResult(ExpendiaTest.java:65)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace307400933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace307400933'><pre>java.lang.StringIndexOutOfBoundsException: String index out of range: 35
+	at java.lang.String.getChars(Unknown Source)
+	at PageObject.ResultFlights.handleString(ResultFlights.java:112)
+	at PageObject.ResultFlights.comparePrice(ResultFlights.java:87)
+	at test.ExpendiaTest.comparePriceResult(ExpendiaTest.java:65)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -120,143 +157,33 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test.ExpendiaTest@2a5ca609</td></tr>
 </table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test.ExpendiaTest.compareCheapPriceResult()'><b>compareCheapPriceResult</b><br>Test class: test.ExpendiaTest</td>
-<td><div><pre>java.lang.Throwable: Method ExpendiaTest.compareCheapPriceResult(java.lang.String)[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace25548982", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace25548982'><pre>java.lang.Throwable: Method ExpendiaTest.compareCheapPriceResult(java.lang.String)[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
-<tr>
-<td title='test.ExpendiaTest.comparePriceResult()'><b>comparePriceResult</b><br>Test class: test.ExpendiaTest</td>
-<td><div><pre>java.lang.Throwable: Method ExpendiaTest.comparePriceResult(java.lang.String)[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace861842890", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace861842890'><pre>java.lang.Throwable: Method ExpendiaTest.comparePriceResult(java.lang.String)[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
+<td title='test.ExpendiaTest.findFlight()'><b>findFlight</b><br>Test class: test.ExpendiaTest<br>Parameters: London, England, UK (LON-All Airports), Dublin Airport (DUB), Ireland</td>
+<td></td>
+<td>46</td>
+<td>test.ExpendiaTest@2a5ca609</td></tr>
 <tr>
 <td title='test.ExpendiaTest.showFlightsResults()'><b>showFlightsResults</b><br>Test class: test.ExpendiaTest</td>
-<td><div><pre>java.lang.Throwable: Method ExpendiaTest.showFlightsResults()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace250370634", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace250370634'><pre>java.lang.Throwable: Method ExpendiaTest.showFlightsResults()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>null</td></tr>
+<td>test.ExpendiaTest@2a5ca609</td></tr>
 <tr>
 <td title='test.ExpendiaTest.verifyPanelAirlines()'><b>verifyPanelAirlines</b><br>Test class: test.ExpendiaTest</td>
-<td><div><pre>java.lang.Throwable: Method ExpendiaTest.verifyPanelAirlines()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1843368112", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1843368112'><pre>java.lang.Throwable: Method ExpendiaTest.verifyPanelAirlines()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>null</td></tr>
+<td>test.ExpendiaTest@2a5ca609</td></tr>
 <tr>
 <td title='test.ExpendiaTest.verifyText()'><b>verifyText</b><br>Test class: test.ExpendiaTest</td>
-<td><div><pre>java.lang.Throwable: Method ExpendiaTest.verifyText()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace989938643", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace989938643'><pre>java.lang.Throwable: Method ExpendiaTest.verifyText()[pri:0, instance:test.ExpendiaTest@2a5ca609] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
+<td></td>
 <td>0</td>
-<td>null</td></tr>
+<td>test.ExpendiaTest@2a5ca609</td></tr>
 </table><p>
 </body>
 </html>
